@@ -1,0 +1,13 @@
+package model;
+
+import org.hibernate.SessionFactory;
+
+public class AccountDAO {
+
+	private SessionFactory sessionFactory;
+
+	public AccountDAO(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+}

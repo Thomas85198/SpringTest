@@ -1,0 +1,13 @@
+package controller;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@ControllerAdvice
+public class ExceptionController {
+
+	@RequestMapping(path = "/exceptionAction.controller")
+	public void processExceptionAction() throws Exception {
+		throw new Exception();
+	}
+}

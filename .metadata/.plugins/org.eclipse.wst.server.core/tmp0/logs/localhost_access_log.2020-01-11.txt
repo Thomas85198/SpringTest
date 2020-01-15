@@ -1,0 +1,5 @@
+127.0.0.1 - - [11/Jan/2020:14:39:31 +0800] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [11/Jan/2020:14:39:47 +0800] "GET /SpringMvcWebProject/UploadFile.jsp HTTP/1.1" 200 432
+0:0:0:0:0:0:0:1 - - [11/Jan/2020:14:40:53 +0800] "POST /SpringMvcWebProject/uploadId.controller;jsessionid=E870AADD35970CF9EEC08CA424B5BD5F HTTP/1.1" 200 731906
+127.0.0.1 - - [11/Jan/2020:15:57:09 +0800] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [11/Jan/2020:15:57:11 +0800] "GET /spring-mvc-demo/ HTTP/1.1" 200 88

@@ -1,0 +1,31 @@
+package com.luv2code.hibernate.hw.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.luv2code.hibernate.demo.entity.Employee;
+
+public class PrimaryKeyDemo {
+
+	public static void main(String[] args) {
+		
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+							.addAnnotatedClass(Employee.class)
+							.buildSessionFactory();
+		
+		Session session = factory.getCurrentSession();
+		
+		try {
+			System.out.println("Creating 3 employee objects");
+			Employee tempEmployee1 = new Employee(0, "ChienLin", "Lu", "EEIT");
+			Employee tempEmployee2 = new Employee(1, "Thomas", "Lu", "WWW");
+			Employee tempEmployee3 = new Employee(3, "Joe", "Wu", "PWC");
+			
+			
+			
+		}
+
+	}
+
+}

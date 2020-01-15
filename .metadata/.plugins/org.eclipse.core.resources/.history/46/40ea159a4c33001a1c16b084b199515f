@@ -1,0 +1,20 @@
+package com.luv2code.springdemo;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("com.luv2code.springdemo")
+public class TestConfig {
+
+	public static void main(String[] args) {
+		
+		// 定義test lucky fortune service
+		@Bean
+		public FortuneService testLuckyFortuneService() {
+			
+		}
+	}
+
+}

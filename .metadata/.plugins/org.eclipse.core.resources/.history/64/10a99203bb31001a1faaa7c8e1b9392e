@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!--說明應用程式會使用到annotation組態 -->
+	<context:annotation-config />
+	<!--使用annotation組態的類別放在model套件內 -->
+	<context:component-scan base-package="model" />
+
+<!--  
+	<bean id="sqlserverDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://192.168.10.173:1433;databaseName=ThomasPower" />
+		<property name="username" value="sa" />
+		<property name="password" value="passw0rd" />
+	</bean>
+-->
+
+	<bean id="sqlserverJndiDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	   <property name="jndiName" value="java:comp/env/connectSqlServerJdbc/OrderServicee"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="sqlserverJndiDataSource"></property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	
+	<bean id="houseBeanDao" class="model.HouseBeanDao">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="houseDao" class="model.HouseDAO">
+		<constructor-arg ref="sqlserverJndiDataSource"></constructor-arg>
+	</bean>
+
+	<bean id="houseService" class="model.HouseService">
+		<constructor-arg ref="houseDao"></constructor-arg>
+	</bean>
+
+	<bean id="egBean" class="model.EngineerBean" init-method="init"
+		destroy-method="destroy" scope="singleton"></bean>
+
+	<bean id="worker1" class="model.Worker">
+		<property name="id" value="1001"></property>
+		<property name="name" value="louis"></property>
+		<property name="title" value="Software Engineer"></property>
+	</bean>
+
+	<bean id="worker2" class="model.Worker">
+		<property name="id" value="1002"></property>
+		<property name="name" value="Janet"></property>
+		<property name="title" value="CEO"></property>
+	</bean>
+
+
+	<bean id="truckBean" class="model.TruckBean">
+		<property name="id" value="1"></property>
+		<property name="brand" value="toyota"></property>
+	</bean>
+
+	<bean id="fordTruck" class="model.TruckBeanStaticFactory"
+		factory-method="getTruckBean">
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+
+	<bean id="hondaTruck" class="model.TruckBeanStaticFactory"
+		factory-method="getTruckBean">
+		<constructor-arg value="2"></constructor-arg>
+	</bean>
+
+	<bean id="truckBeanFactory" class="model.TruckBeanFactory">
+		<property name="map">
+			<map>
+				<entry key="3">
+					<bean class="model.TruckBean">
+						<property name="id" value="3"></property>
+						<property name="brand" value="porsche"></property>
+					</bean>
+				</entry>
+				<entry key="4">
+					<bean class="model.TruckBean">
+						<property name="id" value="4"></property>
+						<property name="brand" value="mercedes"></property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="porscheBean" factory-bean="truckBeanFactory"
+		factory-method="getTruckBean">
+		<constructor-arg value="3"></constructor-arg>
+	</bean>
+
+	<bean id="logProvider" class="util.LogProvider"></bean>
+
+	<!-- String myString = new String("This is a Test"); -->
+	<bean id="myString" name="alice, gollum" class="java.lang.String">
+		<constructor-arg value="This is a Test"></constructor-arg>
+	</bean>
+
+	<bean id="loginDao2" class="model.LoginDAO"
+		p:msg="have a good day"></bean>
+
+	<bean id="loginDao" class="model.LoginDAO">
+		<!-- <property name="msg" value="this is a sign"></property> -->
+		<property name="msg" ref="myString"></property>
+	</bean>
+
+	<bean id="loginService2" class="model.LoginService">
+		<constructor-arg ref="loginDao"></constructor-arg>
+	</bean>
+
+	<bean id="loginService1" class="model.LoginService">
+		<property name="loginDao" ref="loginDao"></property>
+	</bean>
+</beans>

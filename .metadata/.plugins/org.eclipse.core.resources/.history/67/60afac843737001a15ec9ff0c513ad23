@@ -1,0 +1,26 @@
+package com.luv2code.hibernate.hw.demo;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.luv2code.hibernate.demo.entity.Employee;
+
+public class QueryEmployeeDemo {
+
+	public static void main(String[] args) {
+		
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+												.addAnnotatedClass(Employee.class)
+												.buildSessionFactory();
+		
+		Session session = factory.getCurrentSession();
+		
+		session.beginTransaction();
+		
+		List<Employee> theEmployees = session.createQuery("from Employee").list();
+
+	}
+
+}

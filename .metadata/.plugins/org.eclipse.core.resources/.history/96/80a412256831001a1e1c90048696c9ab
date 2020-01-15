@@ -1,0 +1,28 @@
+package com.luv2code.springdemo;
+
+import javax.annotation.PostConstruct;
+
+public class TestFortuneService implements FortuneService {
+
+	// 建立一個陣列字串裡面帶值
+	private String[] data;
+
+	@PostConstruct
+	public void setupMyData() {
+		data = new String[5];
+		
+		${email}
+		data[0] = "";
+		data[1] = b;
+		data[2] = c;
+		data[3] = d;
+		data[4] = e;
+	}
+
+	@Override
+	public String getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

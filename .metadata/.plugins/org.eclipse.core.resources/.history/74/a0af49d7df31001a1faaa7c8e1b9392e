@@ -1,0 +1,20 @@
+package model;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class AccountDAO {
+
+	private SessionFactory sessionFactory;
+
+	public AccountDAO(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	public boolean checkLogin(Account users) {
+		Session session = sessionFactory.getCurrentSession();
+		String hqlStr = "from Account where username=:user and userpwd=:pwd";
+		
+	}
+
+}

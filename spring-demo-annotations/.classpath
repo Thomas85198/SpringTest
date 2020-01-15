@@ -13,7 +13,7 @@
 	<classpathentry kind="lib" path="lib/spring-beans-5.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-5.2.2.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-5.2.2.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-5.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-5.2.2.RELEASE.jar" sourcepath="/Users/chienlin/.m2/repository/org/springframework/spring-context/5.2.2.RELEASE/spring-context-5.2.2.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-indexer-5.2.2.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-indexer-5.2.2.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-indexer-5.2.2.RELEASE.jar"/>

@@ -1,0 +1,9 @@
+package controller;
+
+public class CheckLoginSystem {
+
+	public CheckLoginSystem() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

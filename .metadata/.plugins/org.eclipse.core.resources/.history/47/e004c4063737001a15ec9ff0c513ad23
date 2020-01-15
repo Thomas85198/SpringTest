@@ -1,0 +1,10 @@
+package com.luv2code.hibernate.hw.demo;
+
+public class QueryEmployeeDemo {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

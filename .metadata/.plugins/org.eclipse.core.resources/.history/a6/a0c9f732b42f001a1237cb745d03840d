@@ -1,0 +1,18 @@
+package com.luv2code.springdemo;
+
+public class RandomFortuneService implements FortuneService {
+
+	// create an array of strings
+	private String[] date = {
+			"今天天氣真好",
+			"明天又要上課，好煩",
+			"Java好難"
+	};
+	
+	@Override
+	public String getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

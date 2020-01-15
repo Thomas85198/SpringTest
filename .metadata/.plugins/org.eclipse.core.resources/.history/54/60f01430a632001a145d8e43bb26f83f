@@ -1,0 +1,25 @@
+package controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class FileUploadController {
+		
+	@Autowired
+	private HttpServletRequest request;
+	
+	@RequestMapping(path = "/uploadId.controller", method = RequestMehtod.POST)
+	public ResponseEntity<byte[]> uploadFile(){
+		
+		
+		
+		
+	}
+	
+	
+		
+}

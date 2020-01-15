@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jan 13 20:44:39 CST 2020
+org.eclipse.jst.jee.server\:/binary\:/Users/chienlin/Documents/SpringMVCProject/spring-mvc-demo/WebContent/WEB-INF/lib/spring-web-5.2.2.RELEASE.jar=WEB-INF/lib/spring-web-5.2.2.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/chienlin/Documents/SpringMVCProject/spring-mvc-demo/WebContent/WEB-INF/lib/spring-web-5.2.2.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.2.2.RELEASE-sources.jar

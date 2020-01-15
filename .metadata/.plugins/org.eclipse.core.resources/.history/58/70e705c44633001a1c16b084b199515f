@@ -1,0 +1,15 @@
+package com.luv2code.springdemo;
+
+public class TestCoach implements Coach {
+
+	@Override
+	public String getDailyWorkout() {
+		return "在這邊只是做測試getDailyWorkout";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return "在這邊只是做測試getDailyFortune";
+	}
+
+}

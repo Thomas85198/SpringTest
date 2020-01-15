@@ -1,0 +1,8 @@
+package model;
+
+
+@Entity
+@Table(name="picture")
+public class Picture {
+
+}

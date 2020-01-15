@@ -1,0 +1,19 @@
+package com.luv2code.springdemo;
+
+public class TestFortuneService implements FortuneService {
+
+	
+	// 建立一個陣列字串裡面帶值
+	private String data[]= {
+			"第一個字串測試",
+			"第二個字串測試",
+			"第三個字串測試"
+	};
+	
+	@Override
+	public String getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

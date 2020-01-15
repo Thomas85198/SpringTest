@@ -1,0 +1,26 @@
+package com.luv2code.springdemo;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@PropertySource("classpath:sport.properties")
+// @ComponentScan("com.luv2code.springdemo")
+public class TestConfig {
+
+	// define bean for our testFortuneService
+	// method name will be "bean id"
+	// new差別
+	@Bean
+	public FortuneService testFortuneService() {
+		return new TestFortuneService();
+	}
+	// define bean for our swim coach AND inject dependency
+	// 這兩個beanid要一樣
+	@Bean
+	public Coach testCoach() {
+		return new TestCoach(testFortuneService());
+	
+}
+}

@@ -1,0 +1,9 @@
+127.0.0.1 - - [03/Jan/2020:14:50:48 +0800] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:14:50:49 +0800] "GET /SpringMvcWebProject/form.jsp HTTP/1.1" 200 292
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:14:50:52 +0800] "GET /SpringMvcWebProject/hello.controller;jsessionid=47A107958372B7F2E85FD698B72351FD?name= HTTP/1.1" 404 682
+127.0.0.1 - - [03/Jan/2020:15:25:33 +0800] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:15:25:33 +0800] "GET /SpringMvcWebProject/ HTTP/1.1" 404 733
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:15:25:49 +0800] "GET /SpringMvcWebProject/form.jsp HTTP/1.1" 200 248
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:15:25:53 +0800] "GET /SpringMvcWebProject/hello.controller?name=thomas HTTP/1.1" 200 161
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:15:33:10 +0800] "GET /SpringMvcWebProject/hello.controller?name= HTTP/1.1" 200 264
+0:0:0:0:0:0:0:1 - - [03/Jan/2020:15:33:12 +0800] "GET /SpringMvcWebProject/hello.controller?name=ddd HTTP/1.1" 200 158

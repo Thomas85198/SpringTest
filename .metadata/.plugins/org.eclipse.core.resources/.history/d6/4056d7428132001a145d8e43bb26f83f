@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- jstl -->
+<!DOCTgeYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Image Page</title>
+</head>
+<body>
+<img src="<c:url value="/image/image01.jpg" width="320" height="280"></c:url>"
+</body>
+</html>
